@@ -14,12 +14,12 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  if a==b && a==c
-    :equilateral
-  elsif a==b || a==c || b==c
-    :isosceles
-  else
-    :scalene
+  raise TriangleError, "sides must be greater than zero" unless [a,b,c].min > 0
+  raise TriangleError, "any two sides must sum greater than the other" unless a+b>c && a+c>b && b+c>a
+  case [a, b, c].uniq.size
+    when 3; :scalene
+    when 2; :isosceles
+    when 1; :equilateral
   end
 end
 
