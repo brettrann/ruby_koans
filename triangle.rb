@@ -14,12 +14,11 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  if ( a==b && a==c )
+  if a==b && a==c
     :equilateral
-  elsif ( a==b || a==c || b==c )
+  elsif a==b || a==c || b==c
     :isosceles
   else
-    puts a, b, c
     :scalene
   end
 end
